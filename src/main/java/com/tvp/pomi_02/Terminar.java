@@ -21,8 +21,13 @@ public class Terminar {
 	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 	String[] pid = {"tasklist"};
 	String [] mal = {"sudo","pkill", "ffmpeg"};
-	ProcessBuilder pb = new ProcessBuilder().command(mal).redirectErrorStream(true);
-	Process pidb = pb.start();
+	String [] kill = {"ps", "-e", "|", "grep", "ffmpeg", "|", "awk", "\'{print", "$", "1}\'", "|",  "xargs", "sudo", "kill", "-9"};
+	String  d = "/home/pomi/detener.sh";
+	String [] kill2 = {"pgrep", "ffmpeg", "|",  "xargs", "sudo", "kill", "-9"};
+//	ProcessBuilder pb = new ProcessBuilder().command(kill2).redirectErrorStream(true);
+	//Process pidb = pb.start();
+	Process matar = new ProcessBuilder(kill2).redirectErrorStream(true).start();
+//	System.out.println("Devuelto del matar: "+matar);
 	
 	
 //	Runtime runtime =Runtime.getRuntime();

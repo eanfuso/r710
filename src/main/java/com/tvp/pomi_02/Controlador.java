@@ -1,6 +1,7 @@
 package com.tvp.pomi_02;
 
-
+import com.tvp.pomi_02.Ingesta;
+import com.tvp.pomi_02.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -62,8 +63,8 @@ public class Controlador extends HttpServlet {
        
 //        	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 //        	Process process = Runtime.getRuntime().exec(mat);
-        	
         	Ingesta ingv = new Ingesta(link);
+        
         	try {
 				ingv.correr();
 			} catch (InterruptedException e) {
@@ -89,18 +90,18 @@ public class Controlador extends HttpServlet {
         	//System.gc(); //basura
         	out.println(toString().toString());
        	
-       	try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-       	Ingesta ingp = new Ingesta(link);
-         ingp.correrPlaca();
-         out.println("devuelto del proceso 1: " + ingp.getOut());
-         Scanner s = new Scanner(ingp.getOut()).useDelimiter("\\A");
-         String result = s.hasNext() ? s.next() : "";
-         out.print("Respueste de la app: "+result);
+//       	try {
+//			Thread.sleep(500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//       	Ingesta ingp = new Ingesta(link);
+//         ingp.correrPlaca();
+//         out.println("devuelto del proceso 1: " + ingp.getOut());
+//         Scanner s = new Scanner(ingp.getOut()).useDelimiter("\\A");
+//         String result = s.hasNext() ? s.next() : "";
+//         out.print("Respueste de la app: "+result);
          
          }
         out.println(request.getParameter("cont"));

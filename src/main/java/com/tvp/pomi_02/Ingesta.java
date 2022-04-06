@@ -94,7 +94,7 @@ public class Ingesta  {
 
 	    
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-	    wait(500);
+	    //wait(500);
 	    String line = "";
 	    String outputJson = "";
 	    while ((line = reader.readLine()) != null) {
