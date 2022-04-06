@@ -82,9 +82,16 @@
                 <iframe width="280" height="158" src="https://www.youtube.com/embed/7_oQ0OJ2F0M?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </article>
 
-
-
-
+<!-- borrar entre 85-93 
+<form action="Controlador" method="get">
+                <label>matar</label>
+               
+               
+                <button type= "submit">matar</button>
+                
+<!--                 <input type="button" value="detener" name="detener" action="Controlador" method="get"> -->
+                </form>
+-->
 
 
 

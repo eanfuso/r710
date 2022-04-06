@@ -53,6 +53,7 @@ public class Controlador extends HttpServlet {
         	
         	Terminar t = new Terminar();
         	t.TerminarProceso();
+        	out.println("Devuelto por MATAR!: "+t.getVuelta());
     
            	try {
 			Thread.sleep(1500);
@@ -63,14 +64,18 @@ public class Controlador extends HttpServlet {
        
 //        	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 //        	Process process = Runtime.getRuntime().exec(mat);
-        	Ingesta ingv = new Ingesta(link);
-        
-        	try {
-				ingv.correr();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+  
+           	
+           	
+//           	Ingesta ingv = new Ingesta(link);
+//        
+//        	try {
+//				ingv.correr();
+				
+           	Presentacion ingv = new Presentacion(link);
+           	Thread ing_pres = new Thread(ingv);
+            
+        	ing_pres.start();
        	out.println("devuelto del proceso 1: " + ingv.getOut());
 
 //        	
@@ -84,11 +89,17 @@ public class Controlador extends HttpServlet {
 //        	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 //        	Process process = Runtime.getRuntime().exec(mat);
         	
+//        
+        //	String [] mal = {"sudo","pkill", "ffmpeg"};
+//        	ProcessBuilder pb = new ProcessBuilder().command(mal).redirectErrorStream(true);
+//        	Process pidb = pb.start();
 //        	
+        	
+        //	new ProcessBuilder(mal).start();
         	Terminar t = new Terminar();
         	t.TerminarProceso();
-        	//System.gc(); //basura
-        	out.println(toString().toString());
+//        	//System.gc(); //basura
+//        	out.println(toString().toString());
        	
 //       	try {
 //			Thread.sleep(500);
@@ -96,8 +107,9 @@ public class Controlador extends HttpServlet {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-//       	Ingesta ingp = new Ingesta(link);
-//         ingp.correrPlaca();
+       	Placa ingp = new Placa(link);
+         Thread ing_placa = new Thread(ingp);
+         ing_placa.start();
 //         out.println("devuelto del proceso 1: " + ingp.getOut());
 //         Scanner s = new Scanner(ingp.getOut()).useDelimiter("\\A");
 //         String result = s.hasNext() ? s.next() : "";
@@ -155,7 +167,7 @@ public class Controlador extends HttpServlet {
 //        out.println(System.currentTimeMillis());
 //        out.println("</h1>");
         
-       // response.sendRedirect("index.jsp");
+      response.sendRedirect("index.jsp");
         response.setStatus(200);
 
 	}
