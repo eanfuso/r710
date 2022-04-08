@@ -23,7 +23,7 @@ public class Presentacion implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		
-String [] cmd = {"ffmpeg",  "-y", "-vsync", "1", "-hwaccel", "cuda", "-hwaccel_output_format", "cuda", "-thread_queue_size", "4096", "-f", "decklink", "-i", "71:3a66612b:00000000", "-c:a", "copy", "-c:v", "h264_nvenc", "-preset", "p6", "-tune", "hq", "-b:v", "6M", "-bufsize", "6M", "-maxrate",  "7M", "-vf", "yadif", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "8", "-f", "flv", ing};
+String [] cmd = {"ffmpeg", "-re",  "-y", "-vsync", "1", "-hwaccel", "cuda", "-hwaccel_output_format", "cuda", "-thread_queue_size", "4096", "-f", "decklink", "-i", "71:3a66612b:00000000", "-c:a", "copy", "-c:v", "h264_nvenc", "-preset", "p6", "-tune", "hq", "-b:v", "6M", "-bufsize", "6M", "-maxrate",  "7M", "-vf", "yadif", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "8", "-f", "flv", ing};
  
       
 		

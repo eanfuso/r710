@@ -53,22 +53,45 @@ nav{
 
 
 main{
+	background-color: white;
 min-height: 570px; /*esto me determina una altura minima, para que no desborde si hay exceso de texto*/
-width: 1100px;
+width: 1400px;
 margin: auto; 
+justify-content: space-between;
    
 }
     main article{
+   
         width: 310px;
-        padding: 20px;
+        
+        padding: 70px;
         display: inline-block;
         transition: 0.8s;
         
     }
+    article .plataforma{
+    max-height: 70px;
+    max-width: 90px;
+    min-height: 70px;
+    min-width: 90px;
+    
+    }
+ 	main .selector {
+    width: 85px;
+ 	}
     main article:hover{
         box-shadow: 10px 5px 5px #ccc;
     }
+iframe{
+	align-content: flex-start;
+}
 
+div #seleccionar{
+align-self: left;
+	}
+div #emitir{
+align-self: right; 
+	}
 footer{
 
     height: 180px;
@@ -76,11 +99,11 @@ background-color: #090d46;
 
 }
 /* .caja{ */
-/*     background-color: #3cc; */
+/*     background-color: red; */
 /*     height: 70px; */
 /*     width: 300px; */
 /*     text-align: center; */
-/*     line-height: 70px; la misma altura de la caja para el interlineado. así queda centrado */
+/*     line-height: 70px; la misma altura de la caja para el interlineado. asï¿½ queda centrado */
 /*     box-shadow: 10px 5px 5px #ccc; sombra con parametros: eje x (positivo derecha o negativo izquierda) eje y, desenfoque y color */
 /*     	display: flex; */
 /*   justify-content: center; */
@@ -96,5 +119,5 @@ background-color: #090d46;
 	align-items: center ;
 }
 
-/* sintaxis resumida: buscar en emmet en instalar en vsc
+/* sintaxis resumida: buscar en emmet en instalar en vsc  ;
  article*6>img+h2{Servicio}+p{lorem}  */
