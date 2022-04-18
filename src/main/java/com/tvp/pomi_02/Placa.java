@@ -30,7 +30,7 @@ public class Placa implements Runnable {
 		try {
 			
 			//	new	ProcessBuilder(ld);
-				String [] cmdPlaca = {"ffmpeg", "-hide_banner", "-loglevel", "warning", "-re", "-y", "-vsync", "1", "-stream_loop", "-1","-hwaccel", "cuda", "-thread_queue_size", "4096", "-i", "/home/pomi/separador.mp4", "-c:v", "h264_nvenc", "-b:v", "6M", "-maxrate",  "7M", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "4", "-f", "flv", ing};
+				String [] cmdPlaca = {"ffmpeg", "-report", "-hide_banner", "-loglevel", "warning", "-re", "-y", "-vsync", "1", "-stream_loop", "-1","-hwaccel", "cuda", "-thread_queue_size", "4096", "-i", "/home/pomi/separador.mp4", "-c:v", "h264_nvenc", "-b:v", "6M", "-maxrate",  "7M", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "4", "-f", "flv", ing};
 				
 				
 				Process process = new ProcessBuilder(cmdPlaca).redirectErrorStream(true).start();

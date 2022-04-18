@@ -23,8 +23,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       private String link = "";
+       private String link1= "";
+       private String link2 = "";
        
-    /**
+    public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public Controlador() {
@@ -44,8 +55,22 @@ public class Controlador extends HttpServlet {
 		response.setContentType("text/html");
 		
         PrintWriter out = response.getWriter();
-        out.println("Tu pedido fue: " + (request.getParameter("link")));
-        String link = request.getParameter("link");
+        link1= request.getParameter("link1");
+        link2= request.getParameter("link2");
+//        
+//        this.link = request.getParameter("link1")+ " " + "-ar"+ " " +"44100"+" "+ "-f" +" "+ "flv" +" "+request.getParameter("link2");//+ " " + "-ar"+ "44100"+ "-f" +" "+ "flv" +" " +request.getParameter("link3");
+//        out.println("Tu emisión tiene los destinos: " + (request.getParameter("link1")+ " " + "-ar"+ "44100"+ "-f" +" "+ "flv" +" "+request.getParameter("link2")+ " " + "-ar"+ "44100"+ "-f" +" "+ "flv" +" " +request.getParameter("link3")));
+//        out.println("Tu orden es: " + request.getParameter("cont"));
+//        if (null != request.getParameter("link1")) {
+//        	String link1 = request.getParameter("link1");
+//        }
+//        if (null != request.getParameter("link2")) {
+//        	String link2 = request.getParameter("link2");
+//        }
+//        if (null != request.getParameter("link3")) {
+//        	String link3 = request.getParameter("link3");
+//        }
+        
        // Ingesta ing = new Ingesta(link);
        
         if ("pres".equals(request.getParameter("cont"))) {
@@ -61,6 +86,8 @@ public class Controlador extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+           	
+           	
        
 //        	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 //        	Process process = Runtime.getRuntime().exec(mat);
@@ -72,7 +99,12 @@ public class Controlador extends HttpServlet {
 //        	try {
 //				ingv.correr();
 				
-           	Presentacion ingv = new Presentacion(link);
+           	//Presentacion ingv = new Presentacion(request.getParameter("link1")+ " " + "-ar"+ "44100"+ "-f" +" "+ "flv" +" " + request.getParameter("link2")+  " " + "-ar"+ "44100" + "-f" +" "+ "flv" +" " +request.getParameter("link3"));
+        if ("".equals(link2)) {
+       		link2 = "/dev/null";
+       	}
+        
+        Presentacion ingv = new Presentacion (link1, link2);
            	Thread ing_pres = new Thread(ingv);
             
         	ing_pres.start();
@@ -167,7 +199,7 @@ public class Controlador extends HttpServlet {
 //        out.println(System.currentTimeMillis());
 //        out.println("</h1>");
         
-      response.sendRedirect("index.jsp");
+   //   response.sendRedirect("index.jsp");
         response.setStatus(200);
 
 	}
