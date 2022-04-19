@@ -6,10 +6,16 @@ import java.io.InputStreamReader;
 
 public class Placa implements Runnable {
 	private String ing;
+	private String ing2;
 	private String out;
 	public Placa(String ing) {
 		super();
 		this.ing = ing;
+	}
+	public Placa(String ing, String ing2) {
+		super();
+		this.ing = ing;
+		this.ing2 = ing2;
 	}
 	public String getIng() {
 		return ing;
@@ -30,8 +36,15 @@ public class Placa implements Runnable {
 		try {
 			
 			//	new	ProcessBuilder(ld);
-				String [] cmdPlaca = {"ffmpeg", "-report", "-hide_banner", "-loglevel", "warning", "-re", "-y", "-vsync", "1", "-stream_loop", "-1","-hwaccel", "cuda", "-thread_queue_size", "4096", "-i", "/home/pomi/separador.mp4", "-c:v", "h264_nvenc", "-b:v", "6M", "-maxrate",  "7M", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "4", "-f", "flv", ing};
+				//String [] cmdPlaca = {"ffmpeg", "-report", "-hide_banner", "-loglevel", "warning", "-re", "-y", "-vsync", "1", "-stream_loop", "-1","-hwaccel", "cuda", "-thread_queue_size", "4096", "-i", "/home/pomi/separador.mp4", "-c:v", "h264_nvenc", "-b:v", "6M", "-maxrate",  "7M", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "4", "-f", "flv", ing};
 				
+			String[] cmdPlaca = { "ffmpeg", "-report", "-re", "-vsync", "1", "-hwaccel", "cuda", "-stream_loop", "-1",   "-copyts",  "-i", "/home/pomi/placa.ts", "-c:v",
+					"h264_nvenc", "-preset", "p6",  "-flags", "ildct",
+					 "-g", "12", "-r", "25000/1000",  "-c:a", "aac", "-ar", "44100", "-f",
+					"flv", ing, "-c:v",	"h264_nvenc", "-preset", "p6", "-flags", "ildct",
+					 "-g", "12", "-r", "25000/1000", "-c:a", "aac", "-ar", "44100", "-f", "flv", ing2 };
+			
+			
 				
 				Process process = new ProcessBuilder(cmdPlaca).redirectErrorStream(true).start();
 	            

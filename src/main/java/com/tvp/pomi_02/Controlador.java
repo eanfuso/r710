@@ -116,11 +116,13 @@ public class Controlador extends HttpServlet {
 //             out.print("Respueste de la app: "+result);
 //        	
         }
-        if ("placa".equals(request.getParameter("cont")))
+        if ("placa1".equals(request.getParameter("cont")))
         {
 //        	String[] mat = {"taskkill", "/f", "/IM", "ffmpeg.exe"};
 //        	Process process = Runtime.getRuntime().exec(mat);
-        	
+        	 if ("".equals(link2)) {
+            		link2 = "/dev/null";
+            	}	
 //        
         //	String [] mal = {"sudo","pkill", "ffmpeg"};
 //        	ProcessBuilder pb = new ProcessBuilder().command(mal).redirectErrorStream(true);
@@ -139,7 +141,7 @@ public class Controlador extends HttpServlet {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-       	Placa ingp = new Placa(link);
+       	Placa ingp = new Placa(link1, link2);
          Thread ing_placa = new Thread(ingp);
          ing_placa.start();
 //         out.println("devuelto del proceso 1: " + ingp.getOut());
@@ -199,7 +201,7 @@ public class Controlador extends HttpServlet {
 //        out.println(System.currentTimeMillis());
 //        out.println("</h1>");
         
-   //   response.sendRedirect("index.jsp");
+      response.sendRedirect("index.jsp");
         response.setStatus(200);
 
 	}

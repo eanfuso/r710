@@ -46,7 +46,8 @@ public class Presentacion implements Runnable {
 				"h264_nvenc", "-preset", "p6", "-tune", "hq", "-b:v", "6M", "-bufsize", "6M", "-maxrate", "7M", "-vf",
 				"yadif", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "8", "-f",
 				"flv", ing, "-c:v",
-				"h264_nvenc", "-preset", "p6", "-c:a", "aac", "-ar", "44100", "-f", "flv", ing2 };
+				"h264_nvenc", "-vf",
+				"yadif", "-preset", "p6", "-c:a", "aac", "-ar", "44100", "-f", "flv", ing2 };
 
 		try {
 
