@@ -41,13 +41,13 @@ public class Presentacion implements Runnable {
 		// "yadif", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar",
 		// "44100", "-threads", "8", "-f", "flv", ing};
 		// , ing, "2>", "/usr/share/tomcat9/ffreport1.log"
-		String[] cmd = { "ffmpeg", "-report", "-re", "-y", "-vsync", "1", "-hwaccel", "cuda", "-hwaccel_output_format",
+		String[] cmd = { "ffmpeg", "-report",  "-y", "-vsync", "1", "-hwaccel", "cuda", "-hwaccel_output_format",
 				"cuda", "-thread_queue_size", "4096", "-f", "decklink", "-i", "71:3a66612b:00000000", "-c:v",
-				"h264_nvenc", "-preset", "p6", "-tune", "hq", "-b:v", "6M", "-bufsize", "6M", "-maxrate", "7M", "-vf",
-				"yadif", "-s", "hd1080", "-r", "25", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "8", "-f",
+				"h264_nvenc", "-preset", "p6",  "-b:v", "6M", "-bufsize", "6M", "-maxrate", "7M", "-vf",
+				"yadif", "-s", "hd1080", "-r", "25000/1000", "-g", "50", "-c:a", "aac", "-ar", "44100", "-threads", "8", "-f",
 				"flv", ing, "-c:v",
 				"h264_nvenc", "-vf",
-				"yadif", "-preset", "p6", "-c:a", "aac", "-ar", "44100", "-f", "flv", ing2 };
+				"yadif", "-preset", "p6", "-g", "90", "-r", "30000/1000", "-c:a", "aac", "-ar", "44100", "-f", "flv", ing2 };
 
 		try {
 

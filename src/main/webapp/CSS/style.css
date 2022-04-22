@@ -5,6 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* background-color: red;*/
     
 }
 h2{
@@ -58,18 +59,35 @@ min-height: 570px; /*esto me determina una altura minima, para que no desborde s
 width: 1400px;
 margin: auto; 
 justify-content: space-between;
+/* background-color: red; */
    
 }
     main article{
    
         width: 310px;
-        
+       
         padding: 70px;
         display: inline-block;
         transition: 0.8s;
+        justify-content: center;
         
     }
-    article .plataforma{
+    article .plataforma1{
+    max-height: 100px;
+    max-width: 90px;
+    min-height: 100px;
+    min-width: 90px;
+   
+    
+    }
+      article .plataforma2{
+    max-height: 70px;
+    max-width: 75px;
+    min-height: 70px;
+    min-width: 75x;
+    
+    }
+      article .plataforma3{
     max-height: 70px;
     max-width: 90px;
     min-height: 70px;

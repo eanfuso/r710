@@ -21,15 +21,23 @@
         
     </nav>
     <main> 
+<!--     <h2>ingrese key</h2> -->
+<!--     <input type="text" id="key"name="key"> -->
+<!--     <input type="submit" onclick="sk();" value="sk"/> -->
     
-    
-    
+     <form action="#" onsubmit="return sk();">
+    <input type="text" id="key"name="key" />
+<!--     <input type="submit" onclick="sk();" value="sk"/> otra cosa:  onkeyup=handleInput(this) src viejo "https://www.youtube.com/embed/siTSve2AMgk?autoplay=1&mute=1&loop=1"-->
+   <input type="submit" id="btn" >Submit</button>
+  
+<!--     <button onclick=sk()>Submit</button> -->
+    </form>
     
     
     
     </main>
 
 
-
+<script src="js/master.js"></script>
 </body>
 </html>
