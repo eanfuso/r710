@@ -135,12 +135,12 @@ public class Controlador extends HttpServlet {
 //        	//System.gc(); //basura
 //        	out.println(toString().toString());
        	
-//       	try {
-//			Thread.sleep(500);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+       	try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
        	Placa ingp = new Placa(link1, link2);
          Thread ing_placa = new Thread(ingp);
          ing_placa.start();
